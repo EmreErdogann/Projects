@@ -1,0 +1,632 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html{
+    font-size: 10px;
+
+    scroll-behavior:smooth;
+    -webkit-scroll-behavior:smooth;
+    -moz-scroll-behavior:smooth;    
+}
+body{
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: montserrat; */
+    line-height: 1.5;
+    text-align: center;
+    background-color: #f3f5f7;
+
+   
+}
+a{
+    
+    color: inherit;
+}
+a:hover{
+    text-decoration: none;
+    color: #FF8756;
+}
+/* Bu etiketteki text-decoration * altına alınca aktif olmuyor. hover / focusları * kapsamıyor mu???*/
+i{
+    color: inherit;
+}
+p{
+    padding: 1.2rem 0;
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
+h3{
+    font-weight: bolder;
+    font-size: 4rem;
+    color: #148ca1;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.position{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* NAV */
+nav{
+    height: 80px;
+    width: 100%;
+    background-color: #2f3640;
+    text-align: left;
+    position: fixed;
+    z-index: 100;
+}
+label.logo{
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 0 10rem;
+    line-height: 8rem;
+}
+nav ul{
+    float: right;
+    margin-right: 5rem;
+    margin-bottom: 0;
+}
+nav li{
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 8rem; 
+}
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.7rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;         
+}
+.menu .active, .menu a:hover{
+    border: 1px solid white;
+    transition: 0.5s;
+}
+nav #icon{
+    color: white;
+    font-size: 3rem;
+    line-height: 8rem;
+    float: right;
+    margin-right: 4rem;
+    
+    cursor: pointer;
+    display: none;
+}
+
+
+/* RESPONSİVE ~ NAV */
+@media screen and (max-width:909px){
+
+    nav #icon{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        /* height: 10vh; */
+        background-color: #556274;
+        color: #556274;
+        top: 8rem;
+        left: -100%;
+        text-align: center;
+        z-index: 50;
+        transition: all 0.5s;
+    }
+    nav li{
+        display: block;
+        margin: 5rem 0;
+        line-height: 3rem;
+    }
+    nav a{
+        font-size: 2rem;
+    }
+    a.active, a:hover{
+        border: none;
+        /* color: #556274; */
+    }
+    nav ul.show{
+        left: 0;
+    }
+    
+}
+@media screen and (max-width:1048px){
+
+    label .logo{
+        font-size: 3.2rem;
+        padding-left: 6rem;
+    }
+    nav ul{
+        margin-right: 2rem;
+    }
+    nav a{
+        font-size: 1.7rem;
+    }
+}
+
+
+
+/* HEADER */
+/* header{
+    margin-top: 10rem;
+    z-index: 10;
+} */
+
+#part-1{
+    background-color: #F1F1F1;
+    height: 60rem;
+    width: 55%;
+    float: left;
+    margin-top: 50px;
+
+}
+#part-1 img{
+    display: block;
+    width: 100%;
+    height: 60rem;
+    object-fit: cover;
+    padding: 4rem;
+    border-radius: 5rem;
+
+}
+#slider1{
+    box-shadow: 0 1px 8px 2px rgba(20,23,28,.15);
+}
+
+#part-2{
+    /* background-color: #DFD6CF; */
+    background-color: #d6dfe2;
+    color: #556274;
+    height: 60rem;
+    width: 45%;
+    float: left;
+    position: relative;
+    font-size: 3rem;
+    margin-top: 50px;
+    box-shadow: 0 1px 8px 2px rgba(20,23,28,.15);
+}
+#part-2 .content h1{
+    font-size: 5rem;
+    font-weight: bold;
+}
+#part-2 .content p{
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+.part-2-img{
+    width: 45%;
+    position: relative;
+}
+.part-2-img img{
+    width: 100%;
+    border-radius: 50%;
+    margin-left: 11rem;
+    margin-bottom: 1rem;
+}
+
+.btn{
+    font-size: 1.4rem;
+    display: inline-block;
+    background-color: #556274;
+    color: #fff;
+    border: 1px solid #556274;
+    padding: 1.1rem 2.4rem;
+    border-radius: 0.6rem;
+    transition: all 0.4s;
+    margin-bottom: 0.8rem;
+}
+.btn:hover{
+    background-color: #DAE5E8;
+    color: #556274;
+    border: 1px solid #556274;
+}
+
+
+#share a{
+    margin: 0.8rem;
+}
+#share a:hover{
+    text-decoration: none;
+    color: #485363;
+}
+
+/* RESPONSİVE ~ HEADER */
+@media screen and (max-width:500px){
+
+    #part-1{
+        width: 100%;
+    }
+    #part-2{
+        width: 100%;
+    }
+    .part-2-img img{
+        margin-left: 7rem;
+    }
+    html{
+        font-size: 6px;
+    }
+
+}
+@media screen and (max-width:959px){
+
+    #part-1{
+        width: 100%;
+    }
+
+    #part-2{
+        width: 100%;
+    }
+    .part-2-img img{
+        margin-left: 9rem;
+    }
+    html{
+        font-size: 7px;
+    }
+}
+@media screen and (max-width:1280px){
+
+    html{
+        font-size: 9px;
+    }
+}
+
+
+
+
+/* SECTION */
+/* SECTION - Hakkımda*/
+.hakkimda{
+    padding: 4rem;
+    padding-top: 15rem;
+
+}
+.section-1{
+
+    background-color: rgba(187,146,54,.4);
+    height: 60rem;
+    width: 50%;
+    float: left;
+    position: relative;
+    border-right: 1px solid rgb(201, 200, 200);
+    box-shadow: 0 1px 8px 2px rgba(20,23,28,.15);
+}
+
+.section-1 .img1{
+    position: absolute;
+    width: 40%;
+    top: 10rem;
+    left: 15rem;
+    z-index: 1;
+}
+.section-1 .img2{
+    position: absolute;
+    width: 35%;
+    top: 18rem;
+    right: 17rem;
+}
+
+.section-2{
+
+    background-color: rgba(187,146,54,.2);;
+    height: 60rem;
+    width: 50%;
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    box-shadow: 0 1px 8px 2px rgba(20,23,28,.15);
+
+    float: left;
+
+    position: relative;
+}
+/* RESPONSİVE ~ SECTION - Hakkımda */
+@media screen and (max-width:500px){
+
+    .section-1{
+        width: 100%;
+    }
+    .section-2{
+        width: 100%;
+    }
+    html{
+        font-size: 6px;
+    }
+
+}
+@media screen and (max-width:959px){
+
+    .section-1{
+        width: 100%;
+    }
+
+    .section-2{
+        width: 100%;
+
+    }
+    .section-2 p{
+
+        overflow: hidden;
+    }
+    html{
+        font-size: 7px;
+    }
+}
+@media screen and (max-width:1280px){
+
+    html{
+        font-size: 9px;
+    }
+}
+
+
+/* SECTION - Portfolyo */
+.portfolyo{
+    padding: 4rem;
+    padding-top: 15rem;
+    
+}
+.portfolyo-inner-container{
+    background-color: rgba(184, 150, 129, 0.2);;
+    box-shadow: 0 1px 8px 2px rgba(20,23,28,.15);
+}
+.portfolyo-item-container{
+    width: 25%;
+    float: left;
+    padding: 5rem;
+    
+}
+
+.portfolyo-item{
+    border: 1px solid #ccc;
+    transition: all 0.4s;
+    box-shadow: 0 1px 8px 2px rgba(20,23,28,.15);
+}
+.portfolyo-item:hover{
+    border: 1px solid #777;
+    cursor: pointer;
+    opacity: 0.8;
+    width: 110%;    
+}
+.portfolyo-item:hover .description a{
+       color: #FF8756;
+       font-weight: bold;
+       text-transform: uppercase;
+}
+.description a{
+    font-weight: 400;
+}
+/* .portfolyo-item:hover .img-fortfolyo {
+    width: 20rem;
+}  ??? Resmin üzerine gelince resmi büyütmeye çalış*/
+
+.portfolyo-item img{
+    width: 100%;
+    height: 20rem;
+    object-fit:cover;
+
+}
+.description{
+    text-align: center;
+    padding: 1.5rem;    
+}
+
+
+/* RESPONSİVE ~ SECTION - Portfolio */
+/* @media screen and (max-width:600px){
+    .portfolyo-item-container{
+        width: 100%;
+        padding: 2rem;
+    }
+    html{
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width:959px){
+    .portfolyo-item-container{
+        width: 46%;
+        padding: 2rem;
+    }
+    html{
+        font-size: 9px;
+    }
+} */
+
+@media screen and (max-width:1280px){
+    .portfolyo-item-container{
+        width: 50%;
+        padding: 2rem;
+    }
+    html{
+        font-size: 9px;
+    }
+}
+
+
+
+
+
+/* SECTION - İletişim */
+#iletisim{
+    padding: 4rem;
+    padding-top: 15rem;
+
+}
+#iletisim-form{
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+#iletisim2 #iletisim-form{
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group input, .form-group textarea{
+    padding: 0.7rem 0.12rem;
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 0.4rem;
+
+    /* display: block;
+    font-size: 1.5rem;
+    background-color: transparent; */
+}
+.form-kontrol:focus{
+    border-color: #658fc0;
+    outline: 0;
+    background-color: lightgoldenrodyellow;
+}
+
+#iletisim .form-group{
+    margin-bottom: 0.6rem;
+    
+}
+
+#iletisim label{
+    display: inline-block;
+    margin-bottom: 0.4rem;
+}
+
+.col25{
+    width: 18%;
+    float: left;
+}
+.col75{
+    width: 82%;
+    float: left;
+}
+#iletisim2 h3 hr{
+    margin-bottom: 10rem;
+}
+
+#iletisim2 form{
+    padding: 0 12rem;
+}
+
+#iletisim .part-1{
+    width: 45%;
+    float: left;
+    margin-top: 60px;
+    /* margin-left: 5rem; */
+}
+
+
+#iletisim .part-2{
+    width: 55%;
+    float: left;
+    padding: 0 15rem;
+    border-left: 1px solid rgba(201, 200, 200, 0.5);
+}
+
+.btn2{
+    margin: 5rem 8rem;
+    width: 25rem;
+    box-shadow: 0 2px 16px px rgba(29, 28, 28, 0.15);
+    
+}
+
+#iletisim li{
+    display: inline-block;
+    margin-right: 1rem;
+}
+.btn-social{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    line-height: 2rem;  
+    background-color: white; 
+    color: #556274; 
+    border-color: #556274;
+}
+.btn-social:hover{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    line-height: 2.5rem;  
+    background-color: #556274; 
+    color: white;
+    border: none;
+}
+/* .btn-outline{
+    background-color: transparent;
+} */
+
+.btn-outline li{
+    border: none;
+}
+
+@media screen and (max-width:959px){
+    html{
+        font-size: 8.5px;
+    }
+
+    #iletisim .part-1{
+        width: 100%;
+        border-bottom: 1px solid rgba(201, 200, 200, 0.5);;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+    }
+    #iletisim .part-2{
+        width: 100%;
+        padding-top: 10rem;
+        border: none;
+        padding: 0rem;        
+    }
+
+    .btn2{
+        margin: 2rem 2rem;
+        
+    }
+
+    #iletisim2 form{
+        padding: 0 0rem;
+    }
+
+}
+
+@media screen and (max-width:959px){
+    html{
+        font-size: 8.5px;
+    }
+
+    #iletisim .part-1{
+        width: 100%;
+        border-bottom: 1px solid rgba(201, 200, 200, 0.5);;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+    }
+    #iletisim .part-2{
+        width: 100%;
+        padding-top: 10rem;
+        border: none;
+        padding: 0rem;        
+    }
+
+    .btn2{
+        margin: 2rem 2rem;
+        
+    }
+
+    #iletisim2 form{
+        padding: 0 0rem;
+    }
+
+}
+

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FibaBanka</title>
+	<!-- başlık değişmeleri nasıl olur? -->
+
+	<!-- fontawesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- google fonts CDN roboto -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+		rel="stylesheet">
+
+	<!-- jquery CDN || Bankacılık menüsü + -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="interaction">
+			<div class="interaction__left">
+				<ul class="interaction__left__menu">
+					<li class="interaction__item">
+						<a href="#">Hakkımızda</a>
+					</li>
+					<div class="header__line"></div>
+					<li class="interaction__item">
+						<a href="#">Bize Ulaşın</a>
+					</li>
+					<div class="header__line"></div>
+					<li class="interaction__item">
+						<a href="#">Şube ve ATM’ler</a>
+					</li>
+				</ul>
+			</div>
+			<div class="interaction__right">
+				<ul class="interaction__right__menu">
+					<li class="interaction__item">
+						<i class="far fa-bell"></i>
+						<a href="#">Kampanyalar</a>
+					</li>
+					<div class="header__line"></div>
+					<li class="interaction__item">
+						<i class="far fa-list-alt"></i>
+						<a href="#">Ürün ve Hizmet Ücretleri</a>
+					</li>
+					<div class="header__line"></div>
+					<li class="interaction__item">
+						<a class="language" href="#">EN</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="header__global">
+			<div class="global__left">
+				<h1 class="global__logo global__item">
+					<img class="global__logoImg" src="img/header/fibabanka-logo.png" alt="">
+				</h1>
+				<ul class="global__nav global__item" id="global__nav">
+					<li><a class="global__link" href="#">Bankacılık Menüsü <i
+								class="fas fa-chevron-down global__icon"></i></a>
+						<!-- Bankacılık Menüsü -->
+						<!-- <nav class="navigation">
+							<div class="nav">
+								<ul class="nav__list">
+									<li class="nav__item l1"><a class="nav__link " href="#">Bireysel</a>
+										<ul class="nav__sublist sl1 active">
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Krediler</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Mevduat ve Yatırım
+													Ürünleri</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Kartlar</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Nakit Yönetimi</a>
+											</li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Sigorta Bireysel
+													Emeklilik Sistemi</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Diğer Ürün ve
+													Hizmetlerimiz</a></li>
+										</ul>
+									</li>
+									<li class="nav__item l2"><a class="nav__link" href="#">KOBİ</a>
+										<ul class="nav__sublist sl2">
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Krediler</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Ticari Kartlar</a>
+											</li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">FibaTarife</a>
+											</li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Pos Ürünleri</a>
+											</li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Mevduat ve Yatırım
+													Ürünleri</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Nakit Yönetimi</a>
+											</li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Sigorta ve
+													Bireysel Emeklilik</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Dış Ticaret
+													İşlemleri ve Finansmanı</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Kampanyalar</a>
+											</li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Anlaşmalı
+													Kurumlar</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Paketler</a></li>
+										</ul>
+									</li>
+									<li class="nav__item l3"><a class="nav__link" href="#">Tarım</a>
+										<ul class="nav__sublist sl3">
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Tarım Bankacılığı
+													Ürünleri</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Sigorta
+													Ürünleri</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Tarım POS</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">İş
+													Birlikleri/Ortaklıklar</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Tarım Bankacılığı
+													Şubeleri</a></li>
+										</ul>
+									</li>
+									<li class="nav__item l4"><a class="nav__link" href="#">Kurumsal/Ticari</a>
+										<ul class="nav__sublist sl4">
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Krediler</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Mevduat ve
+													Yatırım</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Dış Ticaret
+													İşlemleri ve Finansmanı</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Nakit Yönetimi</a>
+											</li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Sigorta ve
+													Emeklilik</a></li>
+										</ul>
+									</li>
+									<li class="nav__item l5"><a class="nav__link" href="#">Özel Bankacılık</a>
+										<ul class="nav__sublist sl5">
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Özel Bankacılık
+													Hakkında</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Özel Bankacılık
+													Hizmet Hattı</a></li>
+											<li class="nav__subitem"><a href="#" class="nav__sublink">Ürün ve
+													Hizmetlerimiz</a></li>
+										</ul>
+									</li>
+
+									<li class="nav__imgItem">
+										<a class="nav__imgLink" href="#">
+											<img class="nav__image" src="img/header/kolay-basvuru.png" alt="">
+										</a>
+									</li>
+								</ul>
+
+
+								<a class="nav__imgLeft" href="#">
+									<img class="nav__img" src="img/header/kiraz-hesap-basvuru-formu.jpg" alt="">
+								</a>
+
+
+							</div>
+
+							<button class="nav__close">
+								<i class="fas fa-times"></i> Kapat
+							</button>
+						</nav> -->
+						<!-- Bankacılık Menüsü -->
+					</li>
+
+				</ul>
+			</div>
+
+			<div class="global__right">
+				<button class="global__btn">
+					<a class="global__link" href="">İNTERNET BANKACILIĞI</a>
+
+
+				</button>
+				<input class="search ">					
+						<i class="fas fa-search"></i>					
+				</input>
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<section class="part-1">
+			<div class="praticMenu">
+				<div class="praticMenu__container">
+					<div class="praticMenu__left">
+						<a class="praticMenu__link active" href="#">SİZİN İÇİN</a>
+					</div>
+					<div class="praticMenu__line"></div>
+					<div class="praticMenu__right">
+						<a class="praticMenu__link" href="#">İŞİNİZ İÇİN</a>
+					</div>
+				</div>			
+			</div>	
+	
+			<div class="praticSubMenu">
+				<div class="praticSubMenu__container">
+					<ul class="praticSubMenu__list">
+						<li class="praticSubMenu__item pm1 selected">
+							<a href="" class="praticSubMenu__link pm1">
+								<img class="praticSubMenu_img" src="img/main/logo.png" alt="">
+								<img class="praticSubMenu_img2" src="img/main/logo.png" alt="">
+								<p class="praticSubMenu__text">FibaFX ile Piyasa Takibi Fibabanka'da!</p>
+							</a>
+						</li>
+						<li class="praticSubMenu__item pm2">
+							<a href="#" class="praticSubMenu__link pm2">
+								<img class="praticSubMenu_img" src="img/main/2-1.svg" alt="">
+								<img class="praticSubMenu_img2" src="img/main/2-2.svg" alt="">
+								<p class="praticSubMenu__text">Fibabanka Müşterisi Olmak İstiyorum</p>
+							</a>
+						</li>
+						<li class="praticSubMenu__item pm3">
+							<a href="#" class="praticSubMenu__link pm3">
+								<img class="praticSubMenu_img" src="img/main/3-1.svg" alt="">
+								<img class="praticSubMenu_img2" src="img/main/3-2.svg" alt="">
+								<p class="praticSubMenu__text">Kiraz Hesap Açmak İstiyorum</p>
+							</a>
+						</li>
+						<li class="praticSubMenu__item pm4">
+							<a href="#" class="praticSubMenu__link pm4">
+								<img class="praticSubMenu_img" src="img/main/4-1.svg" alt="">
+								<img class="praticSubMenu_img2" src="img/main/4-2.svg" alt="">
+								<p class="praticSubMenu__text">İhtiyaç Kredisi İstiyorum</p>
+							</a>
+						</li>
+						<li class="praticSubMenu__item pm5">
+							<a href="#" class="praticSubMenu__link pm5">
+								<img class="praticSubMenu_img" src="img/main/5-1.svg" alt="">
+								<img class="praticSubMenu_img2" src="img/main/5-2.svg" alt="">
+								<p class="praticSubMenu__text">Taksitli Alışveriş Yapmak İstiyorum</p>
+							</a>
+						</li>
+						<li class="praticSubMenu__item pm6">
+							<a href="#" class="praticSubMenu__link pm6">
+								<img class="praticSubMenu_img" src="img/main/6-1.svg" alt="">
+								<img class="praticSubMenu_img2" src="img/main/6-2.svg" alt="">
+								<p class="praticSubMenu__text">Yatırım Yapmak İstiyorum</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>	
+			
+			<div class="praticMenuContent">
+				<div class="praticMenuContent__container">
+					<div class="praticMenuContent__left">
+						<h2 class="praticMenuContent__title"> 				
+							FibaFX ile Altın, Gümüş ve Döviz Alım-Satım <br> İşlemleri Çok Avantajlı!			
+						</h2>
+						<p class="praticMenuContent__text">
+							Fibabanka Mobil ve İnternet Bankacılığı kanallarımızdan FibaFX'e kolayca erişerek, <br> piyasaları anlık takip edebilir ve işlemlerinizi 5/24 güvenle gerçekleştirebilirsiniz.
+						</p>
+						<div class="praticMenuContent__btn">
+							<a class="praticMenuContent__button praticMenuContent--color" href="">Hemen İndir
+								<i class="fas fa-arrow-right"></i>
+							</a>
+							<a class="praticMenuContent__button" href="">Detaylı Bilgi</a>
+							<a class="praticMenuContent__button" href="">Kazancını Hesapla</a>
+						</div>
+					</div>
+					<div class="praticMenuContent__right">
+						<img class="praticMenuContent__img" src="img/main/fx-pim-key.png" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- <section class="part-2">
+			<div class="box">
+
+			</div>
+			<div class="box">
+				<h3>Fibabanka Piyasa Verileri</h3>
+				<div>
+					
+				</div>
+			</div>
+			<div class="box">
+				
+			</div>
+			<div class="box">
+				
+			</div>
+		</section> -->
+		
+	</main>
+
+	<!-- internet bankacılığı -->
+	<!-- <div class="global__subBtnContent">
+		<span class="global__subBtn"><a class="global__subLink" href="">Bireysel</a></span>
+		<span class="global__subBtn"><a class="global__subLink" href="">Kurumsal</a></span>	
+	</div> -->
+	<!-- internet bankacılığı -->
+
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>

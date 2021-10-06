@@ -1,0 +1,590 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html{
+	font-size: 10px;
+	font-family: 'Roboto', sans-serif;
+}
+body{
+	font-size: 1.6rem;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+button{
+	color: inherit;
+}
+
+
+/* HEADER */
+/* INTERACTION */
+.header{
+	font-size: 1.4rem;
+	color: #292929;
+
+	display: flex;
+	flex-direction: column;
+}
+.interaction{
+	height: 3.5rem;
+	line-height: normal;
+	font-weight: 400;
+	letter-spacing: 1.1px;
+	word-spacing: 1px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.interaction__left__menu{
+	margin-left: 3rem;
+	/* 325,42px + 30px = */
+	width: 35.542rem;
+
+	display: flex;
+	justify-content: space-evenly;
+}
+.interaction__right__menu{
+	margin-right: 3rem;
+	/* 386,38px + 50px = */
+	width: 43.638rem;
+
+	display: flex;
+	justify-content: space-evenly;
+}
+.header__line{
+	color: #e0e1e2;
+    border: none;
+    border-right: 1px solid ;
+    height: 2rem;
+    margin: auto 0;
+}
+.fa-bell, .fa-list-alt{
+	color: #58595b;
+	margin-right: .5rem;
+}
+.interaction__item{
+	padding: 0 1.1rem;
+	transition: all .25s ease;
+}
+.interaction__item:hover{
+	color: #84bd00;
+}
+.language{
+	font-weight: bold;
+}
+
+/* GLOBAL */
+.header__global{
+	background-image: linear-gradient(90deg, #0057b8, #a6e247);
+	height: 8.7rem;
+	line-height: 1.5;
+	color: #fff;
+	font-size: 1.8rem;
+	font-weight: bold;
+	letter-spacing: .15rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.global__left{
+	/* margin-left: 1rem; */
+
+	display: flex;
+}
+.global__right{
+	/* margin-right: 1rem; */
+
+	display: flex;
+	align-items: center;
+}
+.global__logo{
+	width: 25.7rem;
+	border-right: 1px solid white;
+
+	display: flex;
+	align-items: center;
+}
+.global__logoImg{
+	width: 100%;
+	/* width: 19.6rem; */
+}
+.global__nav{
+	display: flex;
+	align-items: center;
+}
+.global__item{
+	padding: 0 3rem;
+}
+.fa-chevron-down{
+	margin-left: 2rem;
+}
+
+.global__btn{
+	background-image: linear-gradient(256deg, #1e95d6, #006cb7 );
+	border: none;
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	padding: 2rem 2.8rem;
+	font-weight: 600;
+
+	position: relative;
+}
+.search{
+	width: 5.4rem;
+	height: 5.4rem;
+	background-color: #fff;
+	margin: 0 3rem;
+	border-radius: 1rem;
+	font-weight: 100;
+	font-size: 2.5rem;
+	border: none;
+	outline: 0;
+	
+}
+.fa-search{
+	color: #0057b8;
+	position: relative;
+	right: 7rem;
+
+}
+
+
+/* ****** Bankacılık Menüsü ******* */
+.navigation{
+	display: none;
+	width: 100%;
+
+	position: absolute;
+	/* top değeri için headerların yükseklik toplamı verildi */
+	top: calc(3.5rem + 8.7rem );  
+	left: 0%;
+	padding: 4rem 10rem;	
+	float: left;
+}
+.nav{
+	display: flex;
+	justify-content: space-between;
+}
+.nav__list{
+	padding: 0 1rem;
+	/* ilk liste dikey çizgi boşluk */
+	padding-right: 6rem;
+	align-self: flex-start;	
+	border-right: 1px solid #e0e1e2;
+}
+.nav__item{
+	padding-right: 2rem;
+	border-bottom: 1px solid #e0e1e2;
+
+	transition: all .1s ease-in-out;
+}
+.nav__item:first-child{
+	border-top: 1px solid #e0e1e2;
+}
+.nav__link{
+	width: 32rem;
+	height: 5rem;
+	line-height: 5rem;
+	color: #292929;
+	padding-left: 20px;
+	font-size: 24px;
+    font-weight: normal;
+	letter-spacing: normal;
+	display: block;
+}
+
+.nav__sublist{
+	position: absolute;
+	/* ul ve alt ul elemanını yazılar görünecek şekilde üst üste getirmeliyiz, yoksa alt liste alanına geçtiğimizde alt liste kaybolur ** onenote not alındı */
+	/* border: 1px solid slateblue; */
+	left: 30%;
+	
+	/* navigation'da verilen padding değeri verilmeli */
+	top: 4rem; 
+
+	/* ikinci liste dikey çizgi boşluk */
+	padding-left: 10rem;
+}
+.nav__subitem{	
+	width: 35rem ;
+	border-top: 1px solid #e0e1e2;
+	transition: all .1s ease-in-out;
+}
+
+.nav__sublink{
+	width: 32rem;
+	height: 4.4rem;
+	line-height: 4.4rem;
+	color: #4a4a4a;
+	padding: 0 10px;
+	font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+	letter-spacing: normal;
+	display: block	;
+}
+
+.nav__imgItem{
+	margin-top: 4.3rem;
+	width: 35.5rem;
+}
+.nav__image{
+	width: 100%;
+}
+
+.nav__sublist{
+	display: none;
+	height: 100%;
+	width: 70%;
+	/* border:1px solid #0057b8; */
+}
+
+.l1:hover .sl1{
+    display: initial;
+}
+.l2:hover .sl2{
+    display: initial;
+}
+.l3:hover .sl3{
+    display: initial;
+}
+.l4:hover .sl4{
+    display: initial;
+}
+.l5:hover .sl5{
+    display: initial;
+}
+.nav__imgLeft{
+	flex: 0 0 27.2%;
+	max-width: 27.2%;	
+	height: 100%;
+}
+.nav__img{
+	width: 100%;
+	border-radius: 1.5rem;
+}
+
+/* ** Bankacılık Menüsü | Hover ** */
+.nav__item:hover .nav__link{
+    color: #fff;
+    font-weight: 600;
+}
+.nav__item:hover{
+	background-color: #a6e247;    
+}
+.nav__item:hover .nav__link::after{
+	content: "\f061";    
+	font-family: "Font Awesome 6 Free";
+	float: right;
+}
+.nav__subitem:hover .nav__sublink{
+    color: #fff;
+    font-weight: 600;
+}
+.nav__subitem:hover{
+	background-color: #a6e247;    
+}
+
+
+.nav__close{
+	color: #292929;
+    font-size: 18px;
+	font-weight: 400;
+	border: 1px solid #0057b8;
+	padding: 1rem 1rem;
+}
+
+
+
+	
+.global__subBtnContent{
+	background-image: linear-gradient(127deg,#0057b8 59%,#a6e247);
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	padding: 1.5rem 1.6rem;
+	font-weight: 600;
+	width: 24.534rem;
+	/* box-shadow: 0 5px 12px 0 rgb(82 97 115 24%); */
+	
+	transition: all .1s linear;
+
+	display: flex;
+	flex-direction: column;	
+
+	position: absolute;
+	top: 120%;
+	left: 0;
+	
+}
+.global__subBtn{
+	width: 100%;
+	padding: 10px 0;
+    border-radius: 10px;    
+	line-height: normal;
+    letter-spacing: normal;  
+    background-color: #fff;
+    color: #292929;
+	border: none;	
+}
+.global__subBtn:first-child{
+	margin-bottom: 1.6rem;
+}
+.global__btn:hover .global__subBtnContent{
+	display: flex;
+}
+
+
+.main{
+	background-color: #f4f5f5;
+}
+
+/* PART-1 */
+/* PRATICMENU */
+.praticMenu{
+	display: flex;
+	justify-content: center;
+}
+.praticMenu__container{	
+	min-width: 35.5rem;
+	text-align: center;
+	color: #333;
+	line-height: 1.5;	
+	
+	border-radius: 1rem;
+	background-color: #f4f5f5;
+
+	display: flex;
+
+	position: relative;
+	top: -10px;
+}
+.praticMenu__left{
+	flex: 50%;
+
+	margin: 1rem 2rem;
+}
+.praticMenu__right{
+	flex: 50%;
+
+	margin: 1rem 2rem;
+}
+.praticMenu__line{
+	color: rgb(224, 225, 226);
+    border: none;
+    border-right: 1px solid ;
+    height: 2.5rem;
+    margin: auto 0;
+}
+.active{
+	color:#84bd00;
+	font-weight: bold;
+	border-bottom: 1px solid #84bd00;	
+}
+
+
+
+.praticSubMenu__list{
+	width: 118rem;
+	height: 180px;
+	margin: 0 auto;
+	margin-top: 2rem;
+	text-align: center;
+	
+	display: flex;
+	justify-content: center;
+}
+.praticSubMenu__item{
+	width: 130px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 24px 0 rgba(27, 51, 79, 0.14);
+    font-size: 14px;
+    font-weight: normal;
+	line-height: normal;
+    letter-spacing: normal;
+	color: #292929;
+	padding: 11px 4px;
+    cursor: pointer;
+	margin: 0 1.5rem;
+}
+.praticMenu__link{
+	font-size: 18px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+/* .praticSubMenu__link{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+} */
+.praticSubMenu_img2{
+	display: none;
+}
+.praticSubMenu_img, .praticSubMenu_img2{
+	width: 60px;
+	height: 60px;
+}
+.praticSubMenu__text{
+	padding: .8px 8.3px;
+	line-height: 1.4;
+}
+.praticSubMenu__item:nth-child(5) .praticSubMenu__text{
+	padding: .8px 4px ;		
+}
+.selected{
+	/* sorulacak */
+	background: url(img/main/practice-menu__sub-item--selected.png) left top no-repeat;
+    background-size: contain;
+	border: 0;
+	height: 180px;
+	font-weight: 500;
+	letter-spacing: .1rem;
+
+	position: relative;
+	z-index: 1;
+}
+
+.praticSubMenu__item:hover .praticSubMenu_img{
+	display: none;
+}
+.praticSubMenu__item:hover .praticSubMenu_img2{
+	display: initial;
+}
+
+.praticMenuContent{
+	height: 418px;	
+	background-image:linear-gradient(to right, rgba(4, 91, 180, .90), rgba(93, 164, 109, .90)), url(img/main/hizli-bankacilik-sizin-icin.jpg);
+	background-size: center ;
+	background-position-x: center;
+	color: #fff;
+	
+	position: relative;
+	/* ok görünmesi için */
+	top: -11px;    
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.praticMenuContent__container{
+	
+	width: 134.109rem;
+	height: 31rem;
+
+
+	display: flex;
+	justify-content: space-around;
+	
+}
+.praticMenuContent__left{
+	margin: 3.376rem 0;
+	flex-basis: 65%;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.praticMenuContent__right{	
+	width: 38rem;
+	height: 31rem;
+}
+.praticMenuContent__img{	
+	width: 100%;
+}
+.praticMenuContent__title{
+	font-size: 3.2rem;
+	/* width: 80%; */
+	
+    font-weight: bold;
+    line-height: 1.7;
+    letter-spacing: normal;
+    margin-bottom: 10px;
+}
+.praticMenuContent__text{
+	font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    margin-bottom: 25px;
+}
+.praticMenuContent__button{	
+	/* padding: 10px 65px 10px 50px; */
+	text-align: center;
+	padding-right: 15px;
+    border-radius: 10px;
+	box-shadow: 0 10px 24px 0 rgb(74, 74, 74, .14);
+    font-size: 2rem;
+	font-weight: 600;
+	border: 1px solid #fff;
+	margin-right: 30px;	
+    
+	display: inline-block;
+	width: 23rem;
+	height: 5.4rem;
+	line-height: 54px;
+	word-spacing: 1px;
+	transition: all .3s ease-in-out;
+
+}
+.praticMenuContent__button:nth-child(2){
+	font-weight: 400;
+}
+.praticMenuContent__button:nth-child(3){
+	display: none;
+	font-weight: 400;
+	padding-right: 0;
+}
+.praticMenuContent__button:hover{	
+	color: #292929;
+    background-color: #fff;
+	
+}
+.praticMenuContent--color{
+	background-image: linear-gradient(to right,#84bd00,#b4ec51,#a6e247,#a6e247);
+	border: transparent;
+}
+.praticMenuContent--color:hover{	
+	background-image: linear-gradient(to left,#84bd00,#b4ec51,#a6e247,#a6e247);   
+	color: #fff;
+}
+.fa-arrow-right{
+	float: right;
+	line-height: 5.5rem;
+}
+
+
+
+/* PART-2 */
+.part-2{
+	height: 61.809rem;
+	width: 135rem;
+	margin: 0 auto;	
+	padding-top: 47px;
+    padding-bottom: 100px;
+    background-color: #f4f5f5;
+	border: 1px solid #0057b8;
+
+	display: flex;
+	justify-content: space-between;
+}
+.box{
+	margin: 0 1rem;
+	padding: 0 1rem;
+
+	flex: 25%;
+	max-width: 25%;
+	border: 1px solid pink;
+}

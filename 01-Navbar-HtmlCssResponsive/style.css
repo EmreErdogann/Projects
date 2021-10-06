@@ -1,0 +1,138 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+.slider{
+	background: url(img/bg.jpg) no-repeat;
+	width: 100%;
+	height: 100vh;
+	/* *** height değeri verilmeden resim görünmedi */
+	background-size: cover;
+	background-position: bottom;
+}
+.content p{
+	padding: 2rem;
+}
+nav{
+	position: fixed; 
+	/* nav normal akıstan çıktı ve resim yukarı kaydı */
+
+	background: #457b9d;
+
+	/* bu hali ile fixed yapıldığından içerik kadar yer kaplar bu nedenle width verilmeli */
+	width: 100%;
+
+	/* standart navbar yükseklikleri var 80px bunlardan biri  || px olrak verildi */
+	height: 80px;	
+}
+nav #menuBtn{
+	display: none;
+}
+nav .menuBtn{
+	font-size: 2rem;
+	color: #f1faee;
+	float: right;
+	line-height: 80px;
+	margin-right: 2rem;
+	display: none;
+}
+nav .logo{
+	color: #f1faee;
+	font-size: 2rem;
+	display: inline-block;
+
+	/* aşağıdaki iki kod logoyu navda ortalamak için yapıldı  || height yazılmadan da aynı sonuç elde edilir.*/
+	height: 80px;
+	line-height: 80px;
+
+	padding: 0 2rem;
+}
+nav ul{
+	float: right;
+
+	/* padding: 0 2rem; | alternatif olarak marginkullanıldı */
+	margin-right: 2rem;
+	list-style: none;
+}
+nav ul li{
+	display: inline-block;
+
+	/* navbar içerisinde ortalama */
+	line-height: 80px;
+
+	margin: 0 .2rem;
+}
+nav ul li a{
+	color: #f1faee;
+	font-size: 1rem;
+	padding: .5rem;
+	border-radius: 3px;
+	text-decoration: none;
+	transition: all .3s;
+}
+nav ul li a.active{
+	background: #e63946;
+}
+/* active kodu hover'ın altında olursa active class'ına sahip eleman hover stilini almaz. */
+nav ul li a:hover{
+	background: #1d3557;
+}
+
+/* REPONSİVE YAPMA */
+@media (max-width:1060px){
+	nav .menuBtn{
+		display: initial;
+	}
+	nav ul {
+		position: fixed;
+		top: 80;		
+		height: calc(100vh - 80px);
+		/* 1- top 80 verme sebebimiz nav 80px idi biz ul'yi nav altında açmaya çalışıyoruz 
+		   2- yukarıdaki calc hesaplamasını ul alanı ekranın altına taşmaması için yapıldı  */
+		width: 100%;
+		background: #1d3557;
+		display: flex;
+		flex-direction: column;
+		/* align-items: center; */
+		justify-content: center;
+		transition: all 2s;
+
+		left: -100%;
+	}
+	nav ul li{
+		/* mesela sadece anasayfa yazısı tıklanınca değil sağı solundaki boşluklar tıklanınca da çalışması için aşağıdaki kodlar yazıldı, (***)bu işlemin çalışması için a etiketine de display inline block verilmeli  | display: block; hoca yazdı yazmadan da çalışıyor */
+		/* display: block; */
+		min-width: 80%;
+		/* ortalı durumu bozuldu düzeltmek için || ** yukarıdaki align-items kaldırıldı*/ 
+		text-align: center;
+		line-height: 4rem;
+	}
+	nav ul li a {
+		/*   (***)  */
+		display: inline-block;
+		font-size: 1.2rem;
+	}
+
+
+	/* ICONA TIKLADIGIMIZDA MENUNUN ACILMASINI SAGLAMA */
+
+	/* Seçtiğimiz eleman tıklanmış ise aynı elementin içerisindeki ul seç demek */
+	nav #menuBtn:checked ~ ul {
+		left: 0;
+	}
+	/*  nav elementi içindeki #menuBtn id'li element tıklanmış / checked ise aynı seviyede olan .menuBtn class'a sahip label elementi içindeki i tag'ının before elementi demek */
+	nav #menuBtn:checked ~ label.menuBtn i::before{
+		content: "\f00d";
+	}
+}
+@media (max-width:359px){
+	nav .logo{
+		font-size: .9rem;
+	}
+	nav ul li a{
+		padding: 0;
+	}
+}
+

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Getir - Dakikalar içinde kapınızda</title>
+
+	<!-- google fonts kütüphane linki || open sans-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+		rel="stylesheet">
+
+	<!-- Tel Ülke Kodları CDN SORULACAK1-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"
+		integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- JQUERY CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- OWL2 CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- OWL2 styling CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- FONTAWESOME CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="slider()">
+		<!-- NAV 
+		SORULAR : 
+			1- logo / filter
+		-->
+	<nav class="navigation">
+		<div class="nav__container container">
+			<ol class="navigation__left">
+				<li class="navigation__item">
+					<a href="" class="navigation__link">
+						<img class="navigation__img" src="img/nav/1.svg" alt="">
+					</a>
+				</li>
+				<li class="navigation__item">
+					<a href="" class="navigation__link">
+						<img class="navigation__img" src="img/nav/2.svg" alt="">
+					</a>
+				</li>
+				<li class="navigation__item">
+					<a href="" class="navigation__link">
+						<img class="navigation__img" src="img/nav/3.svg" alt="">
+					</a>
+				</li>
+				<li class="navigation__item">
+					<a href="" class="navigation__link">
+						<img class="navigation__img" src="img/nav/4.svg" alt="">
+					</a>
+				</li>
+			</ol>
+
+			<ol class="navigation__right">
+				<li class="navigation__item">
+					<i class="fas fa-globe"></i>
+					<a href="" class="navigation__link">Türkçe (TR)</a>
+				</li>
+				<li class="navigation__item">
+					<i class="fas fa-user"></i>
+					<a href="" class="navigation__link">Giriş yap</a>
+				</li>
+				<li class="navigation__item">
+					<i class="fas fa-user-plus"></i>
+					<a href="" class="navigation__link">Kayıt Ol</a>
+				</li>
+			</ol>
+		</div>
+	</nav>
+
+	<header class="header">
+
+		<div class="header__slider">
+			<img id="sliderImg" class="slider__img" src="img/header/img-1.jpg" alt="">
+		</div>
+
+		<div class="overlay">
+			<!-- overlay (kaplama) resmin üzerindeki mor greadianı vermek için eklenen bir element -->
+			<div class="header__content container">
+				<div class="header__left">
+					<img class="header__logo"
+						src="https://getir.com/_next/static/images/bimutluluk-b3a7fcb14fc9a9c09b60d7dc9b1b8fd6.svg"
+						alt="">
+					<h1 class="header__text">Dakikalar içinde kapınızda</h1>
+				</div>
+
+				<div class="header__right">
+					<form action="" class="header__form" onsubmit="return requiredCheck(event)">
+						<h5 class="form__text">Giriş yap veya kayıt ol</h5>
+						<div class="form__input">
+							<div> 
+								<input class="inp inp--1" id="phoneCode" name="telefon" type="tel" value="+90">								
+							</div>
+							<div class="js">
+								<input class="inp inp--2" type="tel" id="phoneNumber" placeholder="Telefon Numarası">
+								<div class="req"></div>
+							</div>
+							
+						</div>
+						<div class="form-buton">
+							<button type="submit" class="form__btn btn--1">Telefon numarası ile devam et</button>
+							<hr class="form__line">
+							<button type="submit" class="form__btn btn--2">Facebook ile devam et</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+	<main class="main">
+		<!-- CATEGORIES 
+		SORULAR : 
+			1- <span>Yeni Ürünler</span> hangi etiket kullanılacağına nasıl karar verilir (p, h, span vb. figure etiketi? )
+			2- a yada buton etiketine nasıl karar verilir?
+			3- tek card oluşturup çoğaltma imkanı | çok fazla card olması durumunda ne yapılır?
+		-->
+		<section class="categories ">
+			<div class="container">
+				<h6 class="categories__title">Kategoriler</h6>
+				<div class="categories__cards">
+					<a class="categories__card">
+						<img src="img/categories/1.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Yeni Ürünler</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/2.jpeg" alt="" class="categories__img">
+						<span class="categories__text">İndirimler</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/3.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Su & İçecek</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/4.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Meyve & Sebze</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/5.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Fırından</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/6.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Temel Gıda</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/7.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Atırştırmalık</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/8.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Dondurma </span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/9.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Yiyecek</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/10.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Süt & Kahvaltı</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/11.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Fit & Form</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/12.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Kişisel Bakım</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/13.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Ev Bakım</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/14.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Ev & Yaşam</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/15.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Teknoloji</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/16.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Evcil Hayvan</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/17.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Bebek</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/18.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Cinsel Sağlık</span>
+					</a>
+					<a class="categories__card">
+						<img src="img/categories/19.jpeg" alt="" class="categories__img">
+						<span class="categories__text">Giyim</span>
+					</a>
+				</div>
+			</div>
+				
+		</section>
+
+		<!-- CAMPAIGNS 
+		SORULAR : 
+			1- Ekran daraldığında margin değeri olmuyor
+		-->
+		<section class="campaigns container">
+			<h6>Kampanyalar</h6>
+			<div class="wrapper">
+				<div class="carousel owl-carousel">
+					<div class="card">
+						<img class="card_img" src="img/campaigns/1.jpeg" alt="">
+					</div>
+					<div class="card">
+						<img class="card_img" src="img/campaigns/2.jpeg" alt="">
+					</div>
+					<div class="card">
+						<img class="card_img" src="img/campaigns/3.jpeg" alt="">
+					</div>
+					<div class="card">
+						<img class="card_img" src="img/campaigns/4.jpeg" alt="">
+					</div>
+				</div>				
+			</div>		
+		</section>
+
+		<!-- FAVORITES 
+		SORULAR : 
+			1- neden h5
+			2- favorites__text || span p yada hangi etiket kullanılmalı nasıl karar veriliyor
+			3- .favorites__card:nth-child(16) ? farklı çözüm
+			4- üzeri çizili eski fiyat | yapılacak !
+		-->
+		<section class="favorites container">
+			<h5>Favoriler</h5>
+			<div class="favorites__cards">
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/1.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺2,95</span>
+						<span class="favorites__brand">Kuzeyden</span>
+						<span class="favorites__quantity">1.5 L</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/2.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺5,90</span>
+						<span class="favorites__brand">Kızılay Erzincan</span>
+						<span class="favorites__quantity">6 x 200 ml</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/3.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺6,39</span>
+						<span class="favorites__brand">Lay's Mevsim Yeşillikli</span>
+						<span class="favorites__quantity">96 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/4.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺2,85</span>
+						<span class="favorites__brand">Eti Canga</span>
+						<span class="favorites__quantity">45 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/5.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺3,30</span>
+						<span class="favorites__brand">Ülker Napoliten</span>
+						<span class="favorites__quantity">33 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/6.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺10,95</span>
+						<span class="favorites__brand">Kavrulmuş Siyah Ay Çekirdeği</span>
+						<span class="favorites__quantity">180 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/7.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺7,50</span>
+						<span class="favorites__brand">Magnum Badem</span>
+						<span class="favorites__quantity">100 ml</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/8.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺7,95</span>
+						<span class="favorites__brand">İçim %3 Yağlı Süt</span>
+						<span class="favorites__quantity">1 L</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/9.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺20,75</span>
+						<span class="favorites__brand">Bahçıvan Süzme Peynir</span>
+						<span class="favorites__quantity">500 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/10.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price"> <span>₺39,90</span>	
+							₺33,90</span>
+						<span class="favorites__brand">Hertane Kuru Sele Zeytin</span>
+						<span class="favorites__quantity">285 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/11.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺5,95</span>
+						<span class="favorites__brand">La Lorraine Tombul Ekmek</span>
+						<span class="favorites__quantity">350 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/12.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺7,35</span>
+						<span class="favorites__brand">Barilla Spagetti</span>
+						<span class="favorites__quantity">500 g</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/13.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺18,25</span>
+						<span class="favorites__brand">Colgate Üçlü Etki</span>
+						<span class="favorites__quantity">150 ml</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/14.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺57,90</span>
+						<span class="favorites__brand">Selpak Tuvalet Kağıdı</span>
+						<span class="favorites__quantity">16'lı</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/15.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺30,49</span>
+						<span class="favorites__brand">Yumoş Extra Lilyum & Lotus</span>
+						<span class="favorites__quantity">1440 ml</span>
+					</div>
+				</div>
+				<div class="favorites__card">
+					<div class="favorites__img">
+						<img class="favorites__image" src="img/favorites/16.jpeg" alt="">
+						<div class="favorites__add">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="favorites__text">
+						<span class="favorites__price">₺8,35</span>
+						<span class="favorites__brand">Domestos Dağ Esintisi</span>
+						<span class="favorites__quantity">750 ml</span>
+					</div>
+				</div>
+			</div>			
+		</section>	
+
+		<!-- DOWNLOADAPP 
+		SORULAR : 
+			1- butonlar liste mi? 
+		-->	
+		<section class="downloadApp">
+			<div class="downloadApp__bg container">
+				<div class="downloadApp__left">
+					<div class="downloadApp__leftContent">
+						<h2 class="downloadApp__title">Getir'i indirin!</h2>
+						<span class="downloadApp__text">İstediğiniz ürünleri dakikalar içinde kapınıza getirelim.</span>
+						<div class="downloadApp__btn">
+							<ol class="downloadApp__btnList">
+								<li class="downloadApp__btnItem">
+									<a href=""><img class="downloadApp__btnImg" src="img/downloadApp/apple.svg" alt=""></a>
+								</li>
+								<li class="downloadApp__btnItem">
+									<a href=""><img class="downloadApp__btnImg" src="img/downloadApp/google.svg" alt=""></a>
+								</li>
+								<li class="downloadApp__btnItem">
+									<a href=""><img class="downloadApp__btnImg" src="img/downloadApp/huwai.svg" alt=""></a>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="downloadApp__right">
+					<img class="downloadApp__img" src="img/downloadApp/phone.png" alt="">
+				</div>
+			</div>
+		</section>
+
+		<!-- CARDS 
+		SORULAR : 
+			1- 
+		-->	
+		<section class="cards container">
+			<div class="cards__content">
+				<div class="cards__cardContent">
+					<img class="cards__img" src="img/card/1.svg" alt="">
+					<div class="cards__textContent">
+						<h4 class="cards__title">Her siparişinize bir kampanya</h4>
+						<span class="cards__text">Getir’de vereceğiniz her siparişe uygun bir kampanya bulabilirsiniz.</span>
+					</div>
+				</div>
+			</div>
+			<div class="cards__content">
+				<div class="cards__cardContent">
+					<img class="cards__img" src="img/card/2.svg" alt="">
+					<div class="cards__textContent">
+						<h4 class="cards__title">Dakikalar içinde kapınızda</h4>
+						<span class="cards__text">Getir’le siparişiniz dakikalar içinde kapınıza gelir.</span>
+					</div>
+				</div>
+			</div>
+			<div class="cards__content">
+				<div class="cards__cardContent">
+					<img class="cards__img" src="img/card/3.svg" alt="">
+					<div class="cards__textContent">
+						<h4 class="cards__title">Binlerce çeşit mutluluk</h4>
+						<span class="cards__text">Getir’de binlerce çeşit arasından seçiminizi yapabilirsiniz.</span>
+					</div>					
+				</div>
+			</div>		
+		</section>
+	</main>
+
+		<!-- FOOTER 
+		SORULAR : 
+			1- 
+		-->	
+	<footer class="footer">
+		<div class="footer__top container">
+			<div class="footer__downloadApp">
+				<div  class="footer__part-1">
+					<p class="footer__title">Getir'i indirin!</p>
+					<div class="footer__btn">
+						<a href="">
+							<img class="footer__img" src="img/downloadApp/apple.svg" alt="">
+						</a>
+						<a href="">
+							<img src="img/downloadApp/google.svg" alt="">
+						</a>
+						<a href="">
+							<img src="img/downloadApp/huwai.svg" alt="">
+						</a>
+					</div>				
+				</div>
+			</div>
+	
+			<div class="footer__discover">
+				<p class="footer__title">Getir'i keşfedin</p>
+				<div class="footer__content">
+					<a class="footer__item" href="">Hakkımızda</a>
+					<a class="footer__item" href="">Kariyer</a>
+					<a class="footer__item" href="">İletişim</a>
+					<a class="footer__item" href="">COVID-19 Duyuru</a>
+					<a class="footer__item" href="">Sosyal Sorumluluk Projeleri</a>
+				</div>			
+			</div>
+	
+			<div class="footer__help">
+				<p class="footer__title">Yardıma mı ihtiyacınız var?</p>
+				<div class="footer__content">
+					<a class="footer__item" href="">Sıkça Sorulan Sorular</a>
+					<a class="footer__item" href="">Kişisel Verilerin Korunması</a>
+					<a class="footer__item" href="">Gizlilik Politikası</a>
+					<a class="footer__item" href="">Kullanım Koşulları</a>
+					<a class="footer__item" href="">Çerez Politikası</a>
+				</div>	
+			</div>
+	
+			<div class="footer__job">
+				<p class="footer__title">İş Ortağımız Olun</p>
+				<div class="footer__content">
+					<a class="footer__item" href="">Bayimiz Olun</a>
+					<a class="footer__item" href="">Deponuzu Kiralayın</a>
+					<a class="footer__item" href="">GetirYemek Restoranı Olun</a>
+					<a class="footer__item" href="">GetirÇarşı İşletmesi Olun</a>
+				</div>	
+			</div>
+		</div>
+		
+		<div class="footer_bottom container">
+			<div class="footer__left">
+				<span class="copyright">© 2021 Getir</span>
+				<a class="footer__link" href="">
+					<ul class="footer__ol">
+						<li>Bilgi Toplumu Hizmetleri</li>
+					</ul>
+				</a>
+			</div>
+			<div class="footer__right">
+				<a class="footer__icon" href="">
+					<i class="fab fa-facebook fa-10x"></i>
+				</a>
+				<a class="footer__icon" href="">
+					<i class="fab fa-twitter"></i>
+				</a>
+				<a class="footer__icon" href="">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a href="" class="footer__icon">
+					<i class="fas fa-globe"></i>
+					<span>Türkçe (TR)</span>
+				</a>
+			</div>
+
+		</div>
+		
+
+	</footer>
+
+	<script src="script.js" type="text/Javascript"></script>
+</body>
+</html>
